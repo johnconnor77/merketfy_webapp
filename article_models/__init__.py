@@ -1,4 +1,3 @@
-import datetime
 from pydantic import BaseModel
 
 
@@ -8,9 +7,9 @@ class ArticleInfo(BaseModel):
     """
 
     article_name: str
-    filter_search: False
+    filter_search: bool
     markets_selected: list
-    local_markets_suggestions: False
+    local_markets_suggestions: bool
 
     class Config:
         title = 'Article Info selected by User'
