@@ -1,4 +1,4 @@
-from libraries.common import log_message, capture_page_screenshot, browser
+from libraries.common import log_message, capture_page_screenshot, browser, pretty_list
 from libraries.exito.exito import Exito
 from libraries.falabella.falabella import Falabella
 from config import OUTPUT_FOLDER, tabs_dict
@@ -25,22 +25,24 @@ class Process:
         log_message(f"Article to search on market: {article_name}")
 
         exito = Exito(browser)
-        log_message(f"Start search on {exito.__name__} Web" )
+        log_message(f"Start search on {Exito.__name__} Web" )
         exito.access_exito()
         log_message(f"Search information Article {article_name} on {exito.exito_url}")
         exito.search_article(article_name)
-        log_message(f"Extract information from {article_name} on {exito.__name__}")
+        log_message(f"Extract information from {article_name} on {Exito.__name__}")
         exito.extract_info_article()
-        log_message(f"Finished Extraction from {exito.__name__}")
+        pretty_list(exito.data_dict_list)
+        log_message(f"Finished Extraction from {Exito.__name__}")
 
         falabella = Falabella(browser)
-        log_message(f"Start search on {falabella.__name__} Web" )
+        log_message(f"Start search on {Falabella.__name__} Web" )
         falabella.access_falabella()
         log_message(f"Search information Article {article_name} on {falabella.falabella_url}")
         falabella.search_article(article_name)
-        log_message(f"Extract information from {article_name} on {falabella.__name__}")
+        log_message(f"Extract information from {article_name} on {Falabella.__name__}")
         falabella.extract_info_article()
-        log_message(f"Finished Extraction from {falabella.__name__}")
+        pretty_list(falabella.data_dict_list)
+        log_message(f"Finished Extraction from {Falabella.__name__}")
 
     def finish(self):
         log_message("DW Process Finished")

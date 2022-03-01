@@ -83,3 +83,17 @@ def act_on_element(path: str, action: str, time_range: int = 5):
             time.sleep(1)
     raise Exception("Element {} not found".format(path))
 
+
+def pretty_list(data_list):
+    for data in data_list:
+        pretty_dict(data)
+        print()
+
+
+def pretty_dict(data_dict, indent=0):
+   for key, value in data_dict.items():
+      print('\t' * indent + str(key))
+      if isinstance(value, dict):
+         pretty_dict(value, indent+1)
+      else:
+         print('\t' * (indent+1) + str(value))
