@@ -1,5 +1,6 @@
 from libraries.common import log_message, capture_page_screenshot, browser
 from libraries.exito.exito import Exito
+from libraries.falabella.falabella import Falabella
 from config import OUTPUT_FOLDER, tabs_dict
 
 
@@ -20,7 +21,15 @@ class Process:
         browser.maximize_browser_window()
 
     def start(self):
-        pass
+        article_name = "iphone 12"
+        exito = Exito(browser)
+        exito.access_exito()
+        exito.search_article()
+        exito.extract_info_article()
+        falabella = Falabella(browser)
+        falabella.access_falabella()
+
+
 
     def finish(self):
         log_message("DW Process Finished")
