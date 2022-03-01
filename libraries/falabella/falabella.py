@@ -32,7 +32,7 @@ class Falabella:
 
             img_url = card_info.find_element(By.XPATH, './/img[1]').get_attribute('src')
             article_name_market = card_info.find_element(By.XPATH, './/span[1]/b[1]').text
-            article_price = card_info.find_element(By.XPATH, '//li[1]//span').text
+            article_price = card_info.find_element(By.XPATH, './/li[1]//span').text
             data_article = {'article_name_market': article_name_market, 'article_image_url': img_url, 'article_price': article_price}
             articles_list.append(data_article)
 

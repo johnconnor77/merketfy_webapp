@@ -1,6 +1,7 @@
 from libraries.common import act_on_element, capture_page_screenshot, log_message
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
+import time
 
 
 class Exito:
@@ -24,16 +25,16 @@ class Exito:
 
     def extract_info_article(self):
 
-        cards_info = act_on_element('//div[@class="pointer pt3 pb4 flex flex-column h-100"]', "find_elements", time_range=8)[0:3]
+        cards_info = act_on_element('//div[@class="pointer pt3 pb4 flex flex-column h-100"]/div[2]', "find_elements", time_range=10)[0:3]
+        image_info = act_on_element('//div[@class="pointer pt3 pb4 flex flex-column h-100"]/div[1]/descendant::img[1]', "find_elements", time_range=8)[0:3]
         articles_list = []
 
-        for card_info in cards_info:
+        for card_info, image_info in zip(cards_info, image_info):
 
-            image_info = card_info.find_element(By.XPATH, './div[1]')
-            img_url = image_info.find_element(By.XPATH, './descendant::img[1]').get_attribute('src')
-            container_info = card_info.find_element(By.XPATH, './div[2]')
-            article_name_market = container_info.find_element(By.XPATH, './/div[@class="exito-product-details-3-x-stylePlp"]').text
-            article_price = container_info.find_element(By.XPATH, './/descendant::span[@class="exito-vtex-components-4-x-currencyContainer"][2]').text
+            img_url = image_info.get_attribute('src')
+            article_name_market = card_info.find_element(By.XPATH, './/div[@class="exito-product-details-3-x-stylePlp"]').text
+            time.sleep(2)
+            article_price = card_info.find_element(By.XPATH, './/descendant::span[@class="exito-vtex-components-4-x-currencyContainer"][2]').text
             data_article = {'article_name_market': article_name_market, 'article_image_url': img_url, 'article_price': article_price}
             articles_list.append(data_article)
 
