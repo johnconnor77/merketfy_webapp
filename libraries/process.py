@@ -22,14 +22,25 @@ class Process:
 
     def start(self):
         article_name = "iphone 12"
+        log_message(f"Article to search on market: {article_name}")
+
         exito = Exito(browser)
+        log_message(f"Start search on {exito.__name__} Web" )
         exito.access_exito()
-        exito.search_article()
+        log_message(f"Search information Article {article_name} on {exito.exito_url}")
+        exito.search_article(article_name)
+        log_message(f"Extract information from {article_name} on {exito.__name__}")
         exito.extract_info_article()
+        log_message(f"Finished Extraction from {exito.__name__}")
+
         falabella = Falabella(browser)
+        log_message(f"Start search on {falabella.__name__} Web" )
         falabella.access_falabella()
-
-
+        log_message(f"Search information Article {article_name} on {falabella.falabella_url}")
+        falabella.search_article(article_name)
+        log_message(f"Extract information from {article_name} on {falabella.__name__}")
+        falabella.extract_info_article()
+        log_message(f"Finished Extraction from {falabella.__name__}")
 
     def finish(self):
         log_message("DW Process Finished")
