@@ -1,6 +1,7 @@
 from libraries.common import log_message, capture_page_screenshot, browser, pretty_list
 from libraries.exito.exito import Exito
 from libraries.falabella.falabella import Falabella
+from libraries.alkosto.alkosto import Alkosto
 from config import OUTPUT_FOLDER, tabs_dict
 
 
@@ -43,6 +44,16 @@ class Process:
         falabella.extract_info_article()
         pretty_list(falabella.data_dict_list)
         log_message(f"Finished Extraction from {Falabella.__name__}")
+
+        alkosto = Alkosto(browser)
+        log_message(f"Start search on {Alkosto.__name__} Web")
+        alkosto.access_alkosto()
+        log_message(f"Search information Article {article_name} on {alkosto.alkosto_url}")
+        alkosto.search_article(article_name)
+        log_message(f"Extract information from {article_name} on {Alkosto.__name__}")
+        alkosto.extract_info_article()
+        pretty_list(alkosto.data_dict_list)
+        log_message(f"Finished Extraction from {Alkosto.__name__}")
 
     def finish(self):
         log_message("DW Process Finished")
