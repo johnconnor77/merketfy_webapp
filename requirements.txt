@@ -1,4 +1,12 @@
-pydantic~=1.8.1
-uvicorn~=0.13.4
-fastapi~=0.63
-
+django~=2.2.3
+django-filter
+djangorestframework~=3.10.1
+django-restql==0.13.1
+requests==2.24.0
+psycopg2-binary==2.8.6
+python-dateutil==2.8.1
+pytz==2019.1
+Pillow~=8.2
+django-cors-headers==3.2.1
+whitenoise==5.2.0
+drf-yasg==1.20.0
