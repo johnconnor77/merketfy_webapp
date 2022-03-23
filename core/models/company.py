@@ -10,3 +10,4 @@ class Company(MerketfyBase):
         EnumCompanyType,
         on_delete=models.PROTECT)
     note = models.TextField()
+    icon_url = models.URLField(max_length=200)

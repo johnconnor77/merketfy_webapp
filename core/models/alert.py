@@ -13,5 +13,5 @@ class Alert(MerketfyBase):
         User,
         related_name="alerts")
 
-    low_limit = models.FloatField()
+    target_price = models.FloatField()
 
