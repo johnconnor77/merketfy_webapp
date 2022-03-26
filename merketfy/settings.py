@@ -62,7 +62,7 @@ SWAGGER_SETTINGS = {
     }
 }
 
-ROOT_URLCONF = 'reservations.urls'
+ROOT_URLCONF = 'merketfy.urls'
 
 TEMPLATES = [
     {
@@ -83,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'reservations.wsgi.application'
+WSGI_APPLICATION = 'merketfy.wsgi.application'
 
 
 # CORS WHITELIST

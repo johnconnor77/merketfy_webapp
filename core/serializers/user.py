@@ -1,8 +1,10 @@
 from rest_framework import serializers
+from django_restql.fields import NestedField
+from django_restql.mixins import DynamicFieldsMixin
 from core.models import User
 
 
-class RegistrationSerializer(serializers.ModelSerializer):
+class UserSerializer(DynamicFieldsMixin, serializers.ModelSerializer):
     password2 = serializers.CharField(style={'input_type': 'password'}, write_only=True)
 
     class Meta:

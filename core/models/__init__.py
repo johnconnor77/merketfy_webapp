@@ -8,3 +8,4 @@ from .enum_article_brand import EnumArticleBrand
 from .user import User
 from .alert import Alert
 from .favourite import Favourite
+from .historical_price import HistoricalPrice
