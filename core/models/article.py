@@ -12,14 +12,20 @@ class Article(MerketfyBase):
     article_category = models.ForeignKey(
         EnumArticleCategory,
         on_delete=models.PROTECT,
+        db_column="article_category",
+        to_field='short_name',
         related_name="articles")
     article_type = models.ForeignKey(
         EnumArticleType,
         on_delete=models.PROTECT,
+        db_column="article_type",
+        to_field='short_name',
         related_name="articles")
-    brand = models.ForeignKey(
+    article_brand = models.ForeignKey(
         EnumArticleBrand,
         on_delete=models.PROTECT,
+        db_column="article_brand",
+        to_field='short_name',
         related_name="articles")
     name = models.CharField(max_length=128)
     url = models.URLField(max_length=200)
