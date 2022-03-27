@@ -1,4 +1,3 @@
-from django_restql.fields import NestedField
 from django_restql.mixins import DynamicFieldsMixin
 from django_restql.serializers import NestedModelSerializer
 
