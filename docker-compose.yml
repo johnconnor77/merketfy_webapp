@@ -24,7 +24,7 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data/
     environment:
-      - POSTGRES_DB=django_dev
+      - POSTGRES_DB=merketfy_dev
       - POSTGRES_USER=postgre
       - POSTGRES_PASSWORD=postgre
 
