@@ -31,7 +31,7 @@ class MyAccountManager(BaseUserManager):
         return user
 
 
-class User(AbstractBaseUser):
+class Person(AbstractBaseUser):
     email = models.EmailField(verbose_name="email", max_length=60, unique=True)
     username = models.CharField(max_length=30, unique=True)
     birth_date = models.DateField()
@@ -41,7 +41,7 @@ class User(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
-    alerts = models.ManyToManyField('Alert', through="User2Alert", blank=True)
+    alerts = models.ManyToManyField('Alert', through="Person2Alert", blank=True)
     favourites = models.ManyToManyField('Favourite', through="User2Favourite", blank=True)
 
     USERNAME_FIELD = 'username'
@@ -62,4 +62,4 @@ class User(AbstractBaseUser):
 
     class Meta:
         managed = False
-        db_table = 'user'
+        db_table = 'person'

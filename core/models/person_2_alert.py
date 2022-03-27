@@ -3,8 +3,8 @@ from django.db import models
 from .base_classes import MerketfyBase
 
 
-class User2Alert(MerketfyBase):
-    user = models.ForeignKey('User', on_delete=models.CASCADE, db_column='user_id')
+class Person2Alert(MerketfyBase):
+    person = models.ForeignKey('Person', on_delete=models.CASCADE, db_column='person_id')
     alert = models.ForeignKey('Alert', on_delete=models.CASCADE, db_column='alert_id')
 
     def __str__(self):
@@ -12,5 +12,5 @@ class User2Alert(MerketfyBase):
 
     class Meta:
         managed = False
-        db_table = 'user_2_alert'
-        unique_together = (('user', 'alert'),)
+        db_table = 'person_2_alert'
+        unique_together = (('person', 'alert'),)

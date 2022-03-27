@@ -1,7 +1,7 @@
-create table if not exists user_2_favourite
+create table if not exists person_2_favourite
 (
     id                                  serial              not null,
-    user_id                             integer             not null,
+    person_id                           integer             not null,
     favourite_id                        integer             not null,
     removed_at                          timestamptz                     default null,
     created_at                          timestamptz         not null    default CURRENT_TIMESTAMP,

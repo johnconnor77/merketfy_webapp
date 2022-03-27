@@ -5,11 +5,11 @@ from .enum_company_type import EnumCompanyType
 from .enum_article_type import EnumArticleType
 from .enum_article_category import EnumArticleCategory
 from .enum_article_brand import EnumArticleBrand
-from .user import User
+from .person import Person
 from .alert import Alert
 from .favourite import Favourite
 from .image import Image
 from .historical_price import HistoricalPrice
 from .article_2_image import Article2Image
-from .user_2_favourite import User2Favourite
-from .user_2_alert import User2Alert
+from .person_2_favourite import Person2Favourite
+from .person_2_alert import Person2Alert

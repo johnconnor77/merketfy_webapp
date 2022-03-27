@@ -1,4 +1,4 @@
-create table if not exists description
+create table if not exists image
 (
     id                                  serial              not null,
     name                                varchar(128)        not null,

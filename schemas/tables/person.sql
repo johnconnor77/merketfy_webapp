@@ -1,4 +1,4 @@
-create table if not exists favourite
+create table if not exists person
 (
     id                                  serial              not null,
     username                            varchar(64)         not null,
