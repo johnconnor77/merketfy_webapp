@@ -1,9 +1,8 @@
-create table if not exists description
+create table if not exists user_2_favourite
 (
     id                                  serial              not null,
-    article_id                          integer             not null,
-    description                         varchar(1024),
-    attributes                          jsonb               not null    default '{}'::JSON,
+    user_id                             integer             not null,
+    favourite_id                        integer             not null,
     removed_at                          timestamptz                     default null,
     created_at                          timestamptz         not null    default CURRENT_TIMESTAMP,
     updated_at                          timestamptz         not null    default CURRENT_TIMESTAMP,

@@ -1,9 +1,8 @@
 create table if not exists description
 (
     id                                  serial              not null,
-    article_id                          integer             not null,
-    description                         varchar(1024),
-    attributes                          jsonb               not null    default '{}'::JSON,
+    name                                varchar(128)        not null,
+    url                                 varchar             not null,
     removed_at                          timestamptz                     default null,
     created_at                          timestamptz         not null    default CURRENT_TIMESTAMP,
     updated_at                          timestamptz         not null    default CURRENT_TIMESTAMP,
