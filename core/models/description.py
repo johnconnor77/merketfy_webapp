@@ -11,3 +11,7 @@ class Description(MerketfyBase):
         related_name="companies")
     description = models.CharField(max_length=1024)
     attributes = JSONField(blank=True, default=dict)
+
+    class Meta:
+        managed = False
+        db_table = 'description'

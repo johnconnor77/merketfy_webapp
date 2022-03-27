@@ -8,3 +8,7 @@ class HistoricalPrice(MerketfyBase):
         'Article',
         on_delete=models.PROTECT)
     price = models.FloatField()
+
+    class Meta:
+        managed = False
+        db_table = 'historical_price'

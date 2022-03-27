@@ -31,3 +31,8 @@ class Article(MerketfyBase):
     price = models.FloatField()
     shipping_price = models.FloatField(blank=True, null=True)
     rating = models.FloatField(blank=True, null=True)
+    images = models.ManyToManyField('Image', through="Article2Image", blank=True)
+
+    class Meta:
+        managed = False
+        db_table = 'article'

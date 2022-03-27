@@ -14,3 +14,7 @@ class Company(MerketfyBase):
     )
     note = models.TextField()
     icon_url = models.URLField(max_length=200)
+
+    class Meta:
+        managed = False
+        db_table = 'company'

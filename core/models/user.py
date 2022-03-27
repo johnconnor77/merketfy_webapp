@@ -41,6 +41,8 @@ class User(AbstractBaseUser):
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
+    alerts = models.ManyToManyField('Alert', through="User2Alert", blank=True)
+    favourites = models.ManyToManyField('Favourite', through="User2Favourite", blank=True)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['username']
@@ -57,3 +59,7 @@ class User(AbstractBaseUser):
     # Does this user have permission to view this app? (ALWAYS YES FOR SIMPLICITY)
     def has_module_perms(self, app_label):
         return True
+
+    class Meta:
+        managed = False
+        db_table = 'user'

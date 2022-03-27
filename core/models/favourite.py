@@ -7,7 +7,8 @@ class Favourite(MerketfyBase):
     article = models.ForeignKey(
         'Article',
         on_delete=models.PROTECT)
+    users = models.ManyToManyField('User', through="User2Favourite", blank=True)
 
-    users = models.ManyToManyField(
-        'User',
-        related_name="favourites")
+    class Meta:
+        managed = False
+        db_table = 'favourite'
