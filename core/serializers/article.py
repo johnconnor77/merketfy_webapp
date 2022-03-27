@@ -6,7 +6,7 @@ from rest_framework import serializers
 from core.models import Article
 
 from core.serializers import CompanySerializer, EnumArticleCategorySerializer, EnumArticleBrandSerializer, \
-    EnumArticleTypeSerializer, AlertSerializer, FavouriteSerializer
+    EnumArticleTypeSerializer, AlertSerializer, FavouriteSerializer, ImageSerializer
 
 
 class ArticleSerializer(DynamicFieldsMixin, NestedModelSerializer):
@@ -17,6 +17,7 @@ class ArticleSerializer(DynamicFieldsMixin, NestedModelSerializer):
     price = serializers.FloatField(min_value=0.0)
     alerts = NestedField(AlertSerializer, required=False, many=True)
     favourites = NestedField(FavouriteSerializer, required=False, many=True)
+    images = NestedField(ImageSerializer, required=False, many=True)
 
     class Meta:
         model = Article
