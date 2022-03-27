@@ -1,11 +1,8 @@
-create table if not exists company
+create table if not exists historical_price
 (
     id                                  serial              not null,
-    company_type                        varchar             not null,
-    name                                varchar             not null,
-    description                         varchar(1024)       not null,
-    note                                varchar(1024),
-    icon_url                            varchar,
+    article_id                          integer             not null,
+    price                               double precision    not null,
     removed_at                          timestamptz                     default null,
     created_at                          timestamptz         not null    default CURRENT_TIMESTAMP,
     updated_at                          timestamptz         not null    default CURRENT_TIMESTAMP,

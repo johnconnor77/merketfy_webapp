@@ -3,7 +3,7 @@ from django_restql.mixins import DynamicFieldsMixin
 from django_restql.serializers import NestedModelSerializer
 from rest_framework import serializers
 
-from core.models import Alert
+from core.models import HistoricalPrice
 from core.serializers import ArticleSerializer
 
 
@@ -12,5 +12,5 @@ class HistoricalPriceSerializer(DynamicFieldsMixin, NestedModelSerializer):
     price = serializers.FloatField(min_value=0.0)
 
     class Meta:
-        model = Alert
+        model = HistoricalPrice
         fields = '__all__'

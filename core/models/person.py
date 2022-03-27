@@ -42,7 +42,7 @@ class Person(AbstractBaseUser):
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     alerts = models.ManyToManyField('Alert', through="Person2Alert", blank=True)
-    favourites = models.ManyToManyField('Favourite', through="User2Favourite", blank=True)
+    favourites = models.ManyToManyField('Favourite', through="Person2Favourite", blank=True)
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['username']

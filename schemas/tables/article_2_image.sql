@@ -1,4 +1,4 @@
-create table if not exists user_2_alert
+create table if not exists article_2_image
 (
     id                                  serial              not null,
     article_id                          integer             not null,

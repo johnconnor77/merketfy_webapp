@@ -7,4 +7,7 @@ from .historical_price import HistoricalPriceViewSet
 from .enum_article_type import EnumArticleTypeViewSet
 from .enum_article_category import EnumArticleCategoryViewSet
 from .enum_company_type import EnumCompanyTypeViewSet
+from .enum_article_brand import EnumArticleBrandViewSet
+from .person import PersonViewSet
+from .image import ImageViewSet
 from .person import PersonViewSet
