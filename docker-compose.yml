@@ -27,6 +27,8 @@ services:
       - POSTGRES_DB=merketfy_dev
       - POSTGRES_USER=postgre
       - POSTGRES_PASSWORD=postgre
+    command:
+      - sh -c "./schema/install.sh"
 
 volumes:
   postgres_data:
