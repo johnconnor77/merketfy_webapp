@@ -3,6 +3,7 @@ from libraries.exito.exito import Exito
 from libraries.falabella.falabella import Falabella
 from libraries.alkosto.alkosto import Alkosto
 from config import OUTPUT_FOLDER, tabs_dict
+from libraries.linio.linio import Linio
 
 
 class Process:
@@ -54,6 +55,16 @@ class Process:
         alkosto.extract_info_article()
         pretty_list(alkosto.data_dict_list)
         log_message(f"Finished Extraction from {Alkosto.__name__}")
+
+        linio = Linio(browser)
+        log_message(f"Start search on {Linio.__name__} Web")
+        linio.access_linio()
+        log_message(f"Search information Article {article_name} on {linio.linio_url}")
+        linio.search_article(article_name)
+        log_message(f"Extract information from {article_name} on {Linio.__name__}")
+        linio.extract_info_article()
+        pretty_list(linio.data_dict_list)
+        log_message(f"Finished Extraction from {Linio.__name__}") 
 
     def finish(self):
         log_message("DW Process Finished")
