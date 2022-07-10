@@ -1,6 +1,7 @@
 from django.db import models
 
 from core.models.base_classes import MerketfyBase
+from core.models.model_utils.article_choices_field import ArticleCategoryChoices, ArticleTypeChoices, ArticleBrandChoices
 
 
 class Article(MerketfyBase):
@@ -8,24 +9,21 @@ class Article(MerketfyBase):
         'Company',
         on_delete=models.PROTECT,
         related_name="articles")
-    article_category = models.ForeignKey(
-        'EnumArticleCategory',
-        on_delete=models.PROTECT,
-        db_column="article_category",
-        to_field='short_name',
-        related_name="articles")
-    article_type = models.ForeignKey(
-        'EnumArticleType',
-        on_delete=models.PROTECT,
-        db_column="article_type",
-        to_field='short_name',
-        related_name="articles")
-    article_brand = models.ForeignKey(
-        'EnumArticleBrand',
-        on_delete=models.PROTECT,
-        db_column="article_brand",
-        to_field='short_name',
-        related_name="articles")
+    article_category: ArticleCategoryChoices = models.CharField(
+        choices=ArticleCategoryChoices.ARTICLE_CATEGORY_CHOICES,
+        max_length=100,
+        default=ArticleCategoryChoices.UNKNOWN
+    )
+    article_type: ArticleTypeChoices = models.CharField(
+        choices=ArticleTypeChoices.ARTICLE_TYPE_CHOICES,
+        max_length=100,
+        default=ArticleTypeChoices.UNKNOWN
+    )
+    article_brand: ArticleBrandChoices = models.CharField(
+        choices=ArticleBrandChoices.ARTICLE_BRAND_CHOICES,
+        max_length=100,
+        default=ArticleBrandChoices.UNKNOWN
+    )
     name = models.CharField(max_length=128)
     url = models.URLField(max_length=200)
     price = models.FloatField()
