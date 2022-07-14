@@ -10,8 +10,9 @@ class ArticleFilterSet(BaseFilterSet):
         model = Article
         fields = {
             'company': ID_LOOKUP_EXPR,
-            'article_category': ID_LOOKUP_EXPR,
-            'article_type': ID_LOOKUP_EXPR,
+            'article_category': STRING_LOOKUP_EXPR,
+            'article_type': STRING_LOOKUP_EXPR,
+            'article_brand': STRING_LOOKUP_EXPR,
             'name': STRING_LOOKUP_EXPR,
             'price': QTY_LOOKUP_EXPR,
             'shipping_price': QTY_LOOKUP_EXPR,
