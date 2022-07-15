@@ -24,7 +24,7 @@ class Article(MerketfyBase):
         max_length=100,
         default=ArticleBrandChoices.UNKNOWN
     )
-    name = models.CharField(max_length=128)
+    name = models.CharField(max_length=256, unique=True)
     url = models.URLField(max_length=200)
     price = models.FloatField()
     shipping_price = models.FloatField(blank=True, null=True)

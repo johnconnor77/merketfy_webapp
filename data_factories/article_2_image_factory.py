@@ -1,13 +1,19 @@
 import factory
-from factory.fuzzy import FuzzyChoice
 
-from core.models import Image
-from core.models.model_utils.company_choices_field import CompanyTypeChoices
+from core.models import Article2Image
+
+from data_factories.article_factory import ArticleFactory
+from data_factories.image_factory import ImageFactory
 
 
-class ImageFactory(factory.django.DjangoModelFactory):
+class Article2ImageFactory(factory.django.DjangoModelFactory):
     class Meta:
-        model = Image
+        model = Article2Image
 
-    name = factory.Faker('pystr', min_chars=4, max_chars=255)
-    url = factory.Faker('pystr', min_chars=4, max_chars=255)
+    article = factory.SubFactory(ArticleFactory)
+    image = factory.SubFactory(ImageFactory)
+
+
+class ArticleWithPersonFactory(Article2ImageFactory):
+    # Build 2 related images through class Article2ImageFactory
+    images = factory.RelatedFactoryList(Article2ImageFactory, factory_related_name="article", size=2)
