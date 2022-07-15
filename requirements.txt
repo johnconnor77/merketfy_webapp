@@ -5,11 +5,13 @@ charset-normalizer==2.1.0
 coreapi==2.3.3
 coreschema==0.0.4
 Django==4.0.6
-django-cors-headers==3.2.1
+django-cors-headers==3.13.0
 django-filter==22.1
-django-restql==0.13.1
-djangorestframework==3.10.3
-drf-yasg==1.20.0
+django-restql==0.15.2
+djangorestframework==3.13.1
+drf-yasg==1.21.0
+factory-boy==3.2.1
+Faker==13.15.0
 idna==2.10
 inflection==0.5.1
 itypes==1.2.0
@@ -21,7 +23,7 @@ psycopg2-binary==2.9.3
 pyparsing==3.0.9
 pyPEG2==2.15.2
 python-dateutil==2.8.1
-pytz==2019.1
+pytz==2022.1
 requests==2.24.0
 ruamel.yaml==0.17.21
 ruamel.yaml.clib==0.2.6

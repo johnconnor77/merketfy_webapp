@@ -11,5 +11,5 @@ class HistoricalPrice(MerketfyBase):
     price = models.FloatField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'historical_price'

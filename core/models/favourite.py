@@ -10,5 +10,5 @@ class Favourite(MerketfyBase):
     persons = models.ManyToManyField('Person', through="Person2Favourite", blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'favourite'

@@ -8,6 +8,8 @@ class CompanyTypeChoices:
     CANCELLED = 'Cancelled'
     REVIEW = 'Review'
 
+    COMPANY_TYPE_LIST = [UNKNOWN, TECHNOLOGY]
+
     COMPANY_TYPE_CHOICES = [
         (UNKNOWN, UNKNOWN),
         (TECHNOLOGY, TECHNOLOGY),

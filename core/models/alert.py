@@ -11,5 +11,5 @@ class Alert(MerketfyBase):
     target_price = models.FloatField()
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'alert'

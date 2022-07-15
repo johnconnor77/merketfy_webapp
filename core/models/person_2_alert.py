@@ -11,6 +11,6 @@ class Person2Alert(MerketfyBase):
         return str(self.id)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'person_2_alert'
         unique_together = (('person', 'alert'),)

@@ -11,6 +11,6 @@ class Article2Image(MerketfyBase):
         return str(self.id)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'article_2_image'
         unique_together = (('article', 'image'),)

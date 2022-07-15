@@ -15,5 +15,5 @@ class Company(MerketfyBase):
     icon_url = models.URLField(max_length=200)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'company'

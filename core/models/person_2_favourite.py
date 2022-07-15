@@ -11,6 +11,6 @@ class Person2Favourite(MerketfyBase):
         return str(self.id)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'person_2_favourite'
         unique_together = (('person', 'favourite'),)

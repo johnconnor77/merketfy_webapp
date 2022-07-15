@@ -1,5 +1,5 @@
 from django.db import models
-from django.contrib.postgres.fields import JSONField
+from django.db.models import JSONField
 
 from core.models.base_classes import MerketfyBase
 
@@ -13,5 +13,5 @@ class Description(MerketfyBase):
     attributes = JSONField(blank=True, default=dict)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'description'

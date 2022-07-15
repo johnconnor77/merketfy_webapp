@@ -6,6 +6,8 @@ class ArticleTypeChoices:
     SPEAKER = 'speaker'
     HEADPHONES = 'headphone'
 
+    ARTICLE_TYPE_LIST = [SMARTPHONE]
+
     ARTICLE_TYPE_CHOICES = [
         (UNKNOWN, UNKNOWN),
         (SMARTPHONE, SMARTPHONE),
@@ -21,6 +23,8 @@ class ArticleCategoryChoices:
     TECHNOLOGY = 'technology'
     APPLIANCE = 'appliance'
     CLOTHING = 'clothing'
+
+    ARTICLE_CATEGORY_LIST = [TECHNOLOGY]
 
     ARTICLE_CATEGORY_CHOICES = [
         (UNKNOWN, UNKNOWN),
@@ -55,7 +59,30 @@ class ArticleBrandChoices:
     HONOR = 'honor'
     REALME = 'realme'
 
-
+    ARTICLE_BRAND_LIST = [
+        APPLE,
+        SAMSUNG,
+        XIAOMI,
+        SONY,
+        OPPO,
+        LG,
+        ONEPLUS,
+        PANASONIC,
+        BENQ,
+        WHIRLPOOL,
+        BOSE,
+        JBL,
+        LENOVO,
+        ACER,
+        HP,
+        DELL,
+        GOPRO,
+        MICROSOFT,
+        HUAWEI,
+        MOTOROLA,
+        HONOR,
+        REALME
+    ]
 
     ARTICLE_BRAND_CHOICES = [
         (UNKNOWN, UNKNOWN),

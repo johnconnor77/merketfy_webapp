@@ -32,5 +32,5 @@ class Article(MerketfyBase):
     images = models.ManyToManyField('Image', through="Article2Image", blank=True)
 
     class Meta:
-        managed = False
+        managed = True
         db_table = 'article'
