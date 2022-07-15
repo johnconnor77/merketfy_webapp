@@ -34,3 +34,4 @@ class Article(MerketfyBase):
     class Meta:
         managed = True
         db_table = 'article'
+        unique_together = (('name', 'company'),)
