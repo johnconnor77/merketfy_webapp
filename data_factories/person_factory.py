@@ -11,7 +11,7 @@ class PersonFactory(factory.django.DjangoModelFactory):
         model = Person
 
     username = factory.Faker('user_name')
-    email = factory.Sequence(lambda n: 'person{}@example.com'.format(n))
+    email = factory.Faker('email')
     phone_number = factory.Faker('phone_number')
     first_name = factory.Faker('first_name')
     last_name = factory.Faker('last_name')

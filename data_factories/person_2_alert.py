@@ -6,7 +6,7 @@ from data_factories.person_factory import PersonFactory
 from data_factories.alert_factory import AlertFactory
 
 
-class Person2FavouriteFactory(factory.django.DjangoModelFactory):
+class Person2AlertFactory(factory.django.DjangoModelFactory):
     class Meta:
         model = Person2Alert
 
@@ -14,6 +14,6 @@ class Person2FavouriteFactory(factory.django.DjangoModelFactory):
     alert = factory.SubFactory(AlertFactory)
 
 
-class PersonWithAlertFactory(Person2FavouriteFactory):
-    # Build 2 related favourite through class Person2FavouriteFactory
-    alerts = factory.RelatedFactoryList(Person2FavouriteFactory, factory_related_name="person", size=2)
+class PersonWithAlertFactory(Person2AlertFactory):
+    # Build 2 related favourite through class Person2AlertFactory
+    alerts = factory.RelatedFactoryList(Person2AlertFactory, factory_related_name="person", size=2)
